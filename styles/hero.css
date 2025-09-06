@@ -1,0 +1,75 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+.t {
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.garis-text {
+    display: block;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 0.8s ease forwards;
+}
+
+.garis-text:nth-child(2) { animation-delay: 0.2s; }
+.garis-text:nth-child(3) { animation-delay: 0.4s; }
+.garis-text:nth-child(4) { animation-delay: 0.6s; }
+.garis-text:nth-child(5) { animation-delay: 0.8s; }
+
+.hero .garis-text:nth-child(1) { transition-delay: 0s; }
+.hero .garis-text:nth-child(2) { transition-delay: 0.05s; }
+.hero .garis-text:nth-child(3) { transition-delay: 0.1s; }
+.hero .garis-text:nth-child(4) { transition-delay: 0.15s; }
+.hero .garis-text:nth-child(5) { transition-delay: 0.2s; }
+
+
+.hero .garis-text {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left;
+    will-change: transform, opacity, filter;
+}
+
+.nav-menu.active ~ .hero .garis-text {
+    filter: blur(8px);
+    opacity: 0.1;
+    transform: translateX(calc(var(--i, 0) * -3px)) scale(0.98);
+    transition-delay: calc(0.1s + var(--i, 0) * 0.02s);
+}
+
+.hero .garis-text {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.warnamerahputihoneforall {
+    background: linear-gradient(to bottom, #FF0000 50%, #FFFFFF 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
+.highlight {
+    color: var(--accent-color);
+    position: relative;
+}
+
+.dosjaodjosajdosajods {
+    display: inline-flex;
+    gap: 4px;
+}
+
+.dosjaodjosajdosajods span {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    font-size: 0.9em;
+}
