@@ -1,58 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="styles/nav-menu.css">
-    <link rel="stylesheet" href="styles/hero.css">
-    <link rel="stylesheet" href="styles/utils.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <!-- GSAP + Lenis -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/navbar.css">
+  <link rel="stylesheet" href="styles/nav-menu.css">
+  <link rel="stylesheet" href="styles/hero.css">
+  <link rel="stylesheet" href="styles/utils.css">
+  <link rel="stylesheet" href="styles/logo.css">
+  <link rel="stylesheet" href="styles/aboutkedua.css">
+  <link rel="stylesheet" href="styles/about.css">
+  <link rel="stylesheet" href="styles/bahasa.css">
+  <link rel="stylesheet" href="styles/drawing.css">
+  <link rel="stylesheet" href="styles/preloader.css">
+  <script src="preloader.js"></script>
+
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">Portfolio</div>
-        <div class="nav-toggle">
-            <span></span>
-            <span></span>
-        </div>
-    </nav> 
+  <div class="preloader">
+    <h1 class="preloader-text">
+      <span>K</span><span>l</span><span class="trigger-i">i</span><span>w</span><span>y</span><span>r</span>
+    </h1>
+  </div>
 
-    <div class="nav-menu">
-        <button class="close-nav" aria-label="Close menu"></button>
-        <div class="time-display"></div>
-        <div class="nav-menu-content">
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#work">J*b</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="nav-contact">
-                <p class="contact-label">Hubungin aku:</p>
-                <a href="mailto:hello@portfolio.com" class="contact-email">@keangkasa </a>
-            </div>
-        </div>
+  <div class="custom-cursor">
+    <div class="cursor-cross"></div>
+    <div class="cursor-cross"></div>
+    <div class="cursor-dot"></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="logo">Kliwyr</div>
+    <div class="wm-antitimpa">
+      <img src="logofish.png" alt="watermark" class="wm">
     </div>
+    <div class="nav-toggle">
+      <span></span>
+      <span></span>
+    </div>
+  </nav> 
 
-    <main class="hero">
-        <div class="c">
-            <h1 class="t">
-                <span class="garis-text" style="--i:0">halo, aku Kliwyr.</span>
-                <span class="garis-text" style="--i:1">seorang Developer dari <span class="warnamerahputihoneforall">Indonesia</span></span>
-                <span class="garis-text" style="--i:2">asal <span class="highlight">Kalimantan Timur</span></span>
-                <span class="garis-text" style="--i:3">membangun sesuatu yang ada di pikiran ku dengan <span class="highlight"> ENJOY</span> dan</span>
-                <span class="garis-text" style="--i:4"><span class="dosjaodjosajdosajods"></span></span>
-                <span class="garis-text" style="--i:5">sesuatu yang unik.</span>
-            </h1>
+  <div class="nav-menu">
+    <button class="close-nav" aria-label="Close menu"></button>
+    <div class="time-display"></div>
+    <div class="nav-menu-content">
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Job</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-contact">
+        <p class="contact-label">Hubungin aku:</p>
+        <a href="" class="contact-discord">@keangkasa</a>
+      </div>
+    </div>
+  </div>
+
+
+  <main class="hero">
+    <div class="c">
+      <h1 class="t">
+        <span class="garis-text" style="--i:0">halo, aku <span class="yekliwyr" data-text="Kliwyr."></span></span>
+        <span class="garis-text" style="--i:1">seorang Developer dari <span class="warnamerahputihoneforall">Indonesia</span></span>
+        <span class="garis-text" style="--i:2">asal <span class="highlight">Kalimantan Timur</span></span>
+        <span class="garis-text" style="--i:3">membangun sesuatu yang ada di pikiran ku dengan <span class="highlight"> ENJOY</span> dan</span>
+        <span class="garis-text" style="--i:4"><span class="dosjaodjosajdosajods"></span></span>
+        <span class="garis-text" style="--i:5">sesuatu yang unik.</span>
+      </h1>
+    </div>
+  </main>
+
+  <div class="scallop-wrapper">
+    <div class="scallop-border"></div>
+    <div class="about-container">
+      <section class="about-section">
+        <div class="about-header">
+          <h2 class="about-title">Apa saja yang udah ku buat.</h2>
+          <p class="about-description">
+            Ini adalah hasil yang sudah ku buat dan AKAN ku publish source.
+            <p>lainnya ada di github ku.</p>
+          </p>
         </div>
-    </main>
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="card-content">
+              <span class="card-number">(01/03)</span>
+              <h3 class="card-title">Minecraft Server Store (JS)</h3>
+              <ul class="card-list">
+                <li>FITUR:</li>
+                <li>Payment Gateway Integration (Midtrans)</li>
+                <li>Custom Minecraft Plugin for Server</li>
+                <li>Automated Reward and Rank System</li>
+                <li>Store menu in-game</li>
+                <li>Server Currency and Economy Setup</li>
+                <li>Admin Dashboard and store system</li>
+              </ul>
+            </div>
+          </div>
+          <div class="about-card">
+            <div class="card-content">
+              <span class="card-number">(02/03)</span>
+              <h3 class="card-title">Discord SelfBot (JS)</h3>
+              <ul class="card-list">
+                <li>FEATURES:</li>
+                <li>Automated Messages & Notifications</li>
+                <li>Server Moderation (Kick, Ban, Mute)</li>
+                <li>Custom Commands & Role Management</li>
+                <li>Integration with External APIs</li>
+                <li>Music and Media Playback</li>
+                <li>Server Statistics and Analytics</li>
+                <li>Event Scheduling and Reminders</li>
+              </ul>
+            </div>
+          </div>
+          <div class="about-card">
+            <div class="card-content">
+              <span class="card-number">(03/03)</span>
+              <h3 class="card-title">Next Project</h3>
+              <ul class="card-list">
+                <li>-</li>
+                <li>-</li>
+                <li>-</li>
+                <li>-</li>
+                <li>-</li>
+                <li>-</li>
+                <li>-</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 
-    <div class="cursor"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="script.js"></script>
-    <script src="nav.js"></script>
+  <section>
+    <div class="frame">
+      <canvas id="draw"></canvas>
+    </div>
+    <div class="next-section">
+      <h1>Halo, aku Kliw</h1>
+    </div>
+  </section>
+
+  <script src="drawsystem.js"></script>
+  <script src="script.js"></script>
+  <script src="nav.js"></script>
+  <script src="scripts/about.js"></script>
 </body>
 </html>

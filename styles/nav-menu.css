@@ -149,3 +149,43 @@
     top: 0;
     transform: translateX(-50%);
 }
+
+
+.nav-contact {
+    margin-top: 4rem;
+    padding-left: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.contact-label {
+    font-size: 1rem;
+    opacity: 0.5;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.contact-discord {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 0;
+}
+
+.contact-discord::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--text-color);
+    transition: width 0.3s ease;
+}
+
+.contact-discord:hover::after {
+    width: 100%;
+}

@@ -88,6 +88,9 @@ closeMenu
     .to(navMenu, {
         opacity: 0,
         duration: 0.3,
+        onStart: () => {
+            document.body.style.overflow = '';
+        },
         onComplete: () => {
             navMenu.classList.remove('active');
             gsap.set(navMenu, { clearProps: 'all' });
@@ -96,31 +99,23 @@ closeMenu
     });
 
 
-function delayMenu(fn, delay = 400) {
-    let waktuTerakhir = 0;
-    return function (...args) {
-        const now = Date.now();
-        if (isAnimation || (now - waktuTerakhir < delay)) {
-            if (navToggle.style.pointerEvents !== 'none') {
-                navToggle.style.pointerEvents = 'none';
-                gsap.to(navToggle, {
-                    opacity: 0.5,
-                    duration: 0.2,
-                    yoyo: true,
-                    repeat: 1,
-                    onComplete: () => {
-                        navToggle.style.pointerEvents = 'auto';
-                    }
-                });
-            }
-            return;
-        }
-        waktuTerakhir = now;
-        return fn.apply(this, args);
-    };
-}
-
 function toggleMenu() {
+    if (isAnimation) {
+        if (navToggle.style.pointerEvents !== 'none') {
+            navToggle.style.pointerEvents = 'none';
+            gsap.to(navToggle, {
+                opacity: 0.5,
+                duration: 0.1,
+                yoyo: true,
+                repeat: 1,
+                onComplete: () => {
+                    navToggle.style.pointerEvents = 'auto';
+                }
+            });
+        }
+        return;
+    }
+
     const isOpen = navMenu.classList.contains('active');
     isAnimation = true;
 
@@ -134,22 +129,21 @@ function toggleMenu() {
         openMenu.pause();
         closeMenu.restart().then(() => {
             isAnimation = false;
+            document.body.style.overflow = '';
         });
     }
 }
 
-const jedaMenu = delayMenu(toggleMenu, 400);
-
 document.addEventListener('click', (e) => {
     const isClickInside = navMenu.contains(e.target) || navToggle.contains(e.target);
     if (!isClickInside && navMenu.classList.contains('active')) {
-        jedaMenu();
+        toggleMenu();
     }
 });
 
 navToggle.addEventListener('click', (e) => {
     e.stopPropagation();
-    jedaMenu();
+    toggleMenu();
 });
 
-closeButton.addEventListener('click', jedaMenu);
+closeButton.addEventListener('click', toggleMenu);

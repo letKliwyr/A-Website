@@ -1,0 +1,17 @@
+.frame {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* full screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    overflow: hidden;
+  }
+  
+  #draw {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  

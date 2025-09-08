@@ -1,0 +1,19 @@
+.wm-antitimpa {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 99;
+    padding: 1rem;
+}
+
+.wm-antitimpa img.wm {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+}

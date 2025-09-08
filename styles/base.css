@@ -3,6 +3,7 @@
     --text-color: #ffffff;
     --accent-color: #3d85c6;
     --secondary-color: #202020;
+    --fg-color: #0d0d0d;
     --highlight-color: #e6e6e6;
 }
 
@@ -12,6 +13,66 @@
     box-sizing: border-box;
     cursor: none;
 }
+
+.next-section {
+    width: 100vw;  
+    height: 100vh;  
+    background: #000000;           
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.next-section h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+}
+
+.cursor-cross {
+    position: absolute;
+    background: #fff;
+}
+
+.cursor-cross:nth-child(1) {
+    width: 1px;
+    height: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cursor-cross:nth-child(2) {
+    width: 20px;
+    height: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cursor-dot {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease;
+}
+
+.custom-cursor.hovering .cursor-dot {
+    transform: translate(-50%, -50%) scale(2);
+}
+
 
 body {
     background-color: var(--bg-color);
